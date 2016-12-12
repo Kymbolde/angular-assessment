@@ -1,6 +1,6 @@
 angular.module('assessment', ['ui.router']).config(function($stateProvider, $urlRouterProvider) {
 
-	$urlRouterProvider.otherwise('/');
+	// $urlRouterProvider.otherwise('/');
 
 	$stateProvider
 		.state('home', {
@@ -25,7 +25,7 @@ angular.module('assessment', ['ui.router']).config(function($stateProvider, $url
 		})
 		.state('details', {
 			url: 'detail/:id',
-			templateUrl: 'views/product-details.html',
+			templateUrl: './views/product-details.html',
 			controller: 'assessmentCtrl'
 		})
 
