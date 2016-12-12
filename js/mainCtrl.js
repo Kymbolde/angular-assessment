@@ -2,14 +2,21 @@ angular.module('assessment').controller('assessmentCtrl', function($scope, asses
 
 	$scope.getProducts = function() {
 		assessmentService.getProducts().then(function(response) {
-			$scope.products = response.data
+			$scope.products = response
 		})
 	}
 
+$scope.getProducts()
+
 	$scope.getProduct = function() {
-		assessmentService.getProduct(stateParams).then(function(response) {
+		assessmentService.getProduct($stateParams.id).then(function(response) {
 			$scope.product = response.data
+			console.dir($scope.product)
 		})
+	}
+
+	if ($stateParams.id) {
+		$scope.getProduct();
 	}
 
 

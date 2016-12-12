@@ -5,7 +5,10 @@ angular.module('assessment').service('assessmentService', function($http) {
     	return $http({
       		method: 'GET',
       		url: 'http://practiceapi.devmounta.in/products'
-    	})
+    	}).then(function(response) {
+        console.log(response)
+      return response.data
+    })
   	}
 
   	this.getProduct = function(id) {
